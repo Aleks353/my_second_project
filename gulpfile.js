@@ -15,7 +15,7 @@ gulp.task('sprite', async function(){
 							cssName: 'sprite.css',
 							algorithm: 'binary-tree'
 						}));
-	spriteData.img.pipe(gulp.dest('build/img/'));
+	spriteData.img.pipe(gulp.dest('build/img/icons'));
 	spriteData.css.pipe(gulp.dest('build/css/'));
 });
 
