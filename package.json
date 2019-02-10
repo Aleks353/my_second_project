@@ -13,7 +13,10 @@
     "gulp-clean-css": "^4.0.0",
     "gulp-concat-css": "^3.1.0",
     "gulp-connect": "^5.7.0",
+    "gulp-html-replace": "^1.6.2",
     "gulp-htmlincluder": "^0.1.0",
-    "gulp-livereload": "^4.0.1"
+    "gulp-livereload": "^4.0.1",
+    "gulp-stylus": "^2.7.0",
+    "gulp.spritesmith": "^6.9.0"
   }
 }
