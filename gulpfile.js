@@ -33,7 +33,7 @@ gulp.task('html', async function() {
    return gulp.src('dev/**/*.html')
    .pipe(includer())
    .pipe(replace({
-   	css: 'css/style.css'
+   	css: ['css/sprite.css', 'css/style.css']
    }))
    .pipe(gulp.dest('build/'))
    .pipe(connect.reload());
