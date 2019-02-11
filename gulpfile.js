@@ -15,12 +15,12 @@ gulp.task('sprite', async function(){
 							cssName: 'sprite.css',
 							algorithm: 'binary-tree'
 						}));
-	spriteData.img.pipe(gulp.dest('build/img/icons'));
+	spriteData.img.pipe(gulp.dest('build/img/'));
 	spriteData.css.pipe(gulp.dest('build/css/'));
 });
 
 // Конкатинация файлов CSS (их склеивание)
-gulp.task('concat', async function(){
+gulp.task('css', async function(){
 	return gulp.src(['dev/css/reset.css', 'dev/css/**/*.css'])
 	.pipe(concatCss("style.css"))
 	.pipe(cleanCSS({compatibility: 'ie8'})) // Минификация css файлов
@@ -40,7 +40,7 @@ gulp.task('html', async function() {
 });
 
 // Виртуальный сервер Livereload
-gulp.task('connect', async function() {
+gulp.task('sevrer', async function() {
   connect.server({
     root: 'build',
     livereload: true
@@ -50,11 +50,11 @@ gulp.task('connect', async function() {
 // Просмоторшик
 async function watch() {
 	gulp.watch('dev/**/*.html', gulp.series('html'));
-	gulp.watch('dev/**/*.css', gulp.series('concat'));
+	gulp.watch('dev/**/*.css', gulp.series('css'));
 }
 
 // Комплексный запуск
-gulp.task('default', gulp.series('connect', 'html', 'concat', watch));
+gulp.task('default', gulp.series('sevrer', 'html', 'css', watch));
 
 
 	
